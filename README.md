@@ -81,6 +81,8 @@ Furthemore, extremely complex cache structures can be implemented due to versati
 
 # Base Addr Handler
 
+This class is used to generate abstract (Set, Tag) from Addr
+
 ````C++
     template <typename AddrT, typename SetT, typename TagT>
     class BaseAddrHandler
@@ -104,6 +106,8 @@ Furthemore, extremely complex cache structures can be implemented due to versati
 ````
 
 # Base Data Handler
+
+This class manages how data is stored in a cache
 
 ````C++
     template <typename SetT, typename TagT, typename ReplInfoT, typename DataT>
@@ -140,6 +144,8 @@ Furthemore, extremely complex cache structures can be implemented due to versati
 ````
 
 # Base Replacer
+
+This class is used to define replacement policy
 
 ````C++
     template <typename SetT, typename TagT, typename ReplInfoT>
