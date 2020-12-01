@@ -46,7 +46,6 @@ TEST(LFUCacheTest, LFUCacheReadEmpty)
     config::CacheT cache = config::CacheT(&addr_handler, &data_handler, &replacer);
 
     const std::size_t addr = 28;
-    const std::size_t data = 570;
 
     auto read_result = cache.read(addr);
     ASSERT_FALSE(read_result.has_value());

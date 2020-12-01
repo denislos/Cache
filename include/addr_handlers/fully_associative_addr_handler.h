@@ -18,14 +18,14 @@ namespace cache {
         using typename BaseAddrHandler<AddrT, std::size_t, AddrT>::TagParamT;
         using typename BaseAddrHandler<AddrT, std::size_t, AddrT>::AddrParamT;
 
-        std::size_t get_set(AddrParamT addr) override { return 0; }
+        std::size_t get_set([[maybe_unused]]AddrParamT addr) override { return 0; }
         AddrT get_tag(AddrParamT addr) override { return addr; }
 
         std::pair<std::size_t, AddrT> get_set_tag(AddrParamT addr) override { 
             return std::pair<std::size_t, AddrT>(0, addr);
         }
 
-        AddrT get_addr(SetParamT set, TagParamT tag) override {
+        AddrT get_addr([[maybe_unused]]SetParamT set, TagParamT tag) override {
             return tag;
         }
     };

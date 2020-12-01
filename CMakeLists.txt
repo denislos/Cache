@@ -16,16 +16,24 @@
         include/addr_handlers/
     )
 
+    file(GLOB DEMO_SRCS
+        "demo/demo.cpp"
+    )
+
     file(GLOB TEST_SRCS
         "tests/test_cache.cpp"
     )
 
     set(CACHE_TEST cache_test)
+    set(CACHE_DEMO cache_demo)
 
     add_executable(${CACHE_TEST} ${TEST_SRCS})
     target_link_libraries(${CACHE_TEST} PUBLIC gtest gtest_main pthread)
-    add_compile_options(${CACHE_TEST} PUBLIC -Wall -Werror -Wextra)
+    target_compile_options(${CACHE_TEST} PUBLIC -Wall -Werror -Wextra)
 
     gtest_discover_tests(${CACHE_TEST})
 
     enable_testing()
+
+    add_executable(${CACHE_DEMO} ${DEMO_SRCS})
+    target_compile_options(${CACHE_DEMO} PUBLIC -O3 -Wall -Werror -Wextra)

@@ -6,6 +6,7 @@
 #include "base_replacer.h"
 
 #include <unordered_map>
+#include <map>
 
 namespace pagrnd {
 namespace cache {
